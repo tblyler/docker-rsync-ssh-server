@@ -9,7 +9,7 @@ fi
 
 /usr/sbin/sshd
 
-while pgrep -f /usr/sbin/sshd; do
+while pgrep -f /usr/sbin/sshd > /dev/null 2>&1; do
 	sleep 5
 done
 
