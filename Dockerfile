@@ -4,7 +4,9 @@ RUN apk add --no-cache \
 	openssh-server \
 	rsync
 
-RUN mkdir -p /root/.ssh && cp /etc/ssh/sshd_config /etc/default_sshd_config
+RUN mkdir -p /root/.ssh && \
+	cp /etc/ssh/sshd_config /etc/default_sshd_config && \
+	passwd -d root
 
 COPY ./entrypoint.sh /entrypoint
 
